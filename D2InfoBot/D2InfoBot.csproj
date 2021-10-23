@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CsQuery" Version="1.3.4" />
+    <PackageReference Include="DSharpPlus" Version="4.1.0" />
+    <PackageReference Include="DSharpPlus.CommandsNext" Version="4.1.0" />
+    <PackageReference Include="DSharpPlus.Interactivity" Version="4.1.0" />
+    <PackageReference Include="ksemenenko.ColorThief" Version="1.1.1.4" />
+    <PackageReference Include="System.Drawing.Common" Version="5.0.2" />
+    <PackageReference Include="Uno.UI" Version="3.9.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <SourceGeneratorInput Remove="Extensions\PagedMessage\IPage.cs" />
+    <SourceGeneratorInput Remove="Extensions\PagedMessage\IPagedMessage.cs" />
+    <SourceGeneratorInput Remove="Extensions\PagedMessage\Page.cs" />
+    <SourceGeneratorInput Remove="Extensions\PagedMessage\PagedMessage.cs" />
+    <SourceGeneratorInput Remove="Commands\Test\Music.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Parser\Structures\Hero.cs">
+      <DependentUpon>ProfileInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Update="Parser\Structures\Match.cs">
+      <DependentUpon>ProfileInfo.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+</Project>
